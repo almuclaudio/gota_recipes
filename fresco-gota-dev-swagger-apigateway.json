@@ -1,0 +1,151 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2022-12-10T17:25:12Z",
+    "title" : "fresco-gota"
+  },
+  "host" : "fle2oy1e8j.execute-api.eu-west-1.amazonaws.com",
+  "basePath" : "/dev",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/recipes" : {
+      "get" : {
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:980508671241:function:fresco-recipes-dev-recipes/invocations",
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "passthroughBehavior" : "when_no_match",
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws_proxy"
+        }
+      },
+      "post" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:980508671241:function:fresco-recipes-dev-recipes/invocations",
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "passthroughBehavior" : "when_no_match",
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws_proxy"
+        }
+      },
+      "put" : {
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        },
+        "security" : [ {
+          "api_key" : [ ]
+        } ],
+        "x-amazon-apigateway-integration" : {
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:980508671241:function:fresco-recipes-dev-recipes/invocations",
+          "responses" : {
+            "default" : {
+              "statusCode" : "200"
+            }
+          },
+          "passthroughBehavior" : "when_no_match",
+          "contentHandling" : "CONVERT_TO_TEXT",
+          "type" : "aws_proxy"
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "responses" : {
+            "default" : {
+              "statusCode" : "200",
+              "responseParameters" : {
+                "method.response.header.Access-Control-Allow-Methods" : "'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT'",
+                "method.response.header.Access-Control-Allow-Headers" : "'Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Origin" : "'*'"
+              }
+            }
+          },
+          "requestTemplates" : {
+            "application/json" : "{\"statusCode\": 200}"
+          },
+          "passthroughBehavior" : "when_no_match",
+          "type" : "mock"
+        }
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "api_key" : {
+      "type" : "apiKey",
+      "name" : "x-api-key",
+      "in" : "header"
+    }
+  },
+  "definitions" : {
+    "Empty" : {
+      "type" : "object",
+      "title" : "Empty Schema"
+    }
+  }
+}

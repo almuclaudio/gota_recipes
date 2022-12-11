@@ -1,0 +1,9 @@
+service: fresco-recipes
+provider:
+  name: aws
+  runtime: python3.7
+  region: eu-west-1
+functions:
+  recipes:
+    handler: lambda_function.lambda_handler
+   
